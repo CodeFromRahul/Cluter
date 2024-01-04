@@ -1,0 +1,37 @@
+<% include ./partials/header.ejs %>
+<div class="profile w-full min-h-full bg-zinc-800 text-white pt-1">
+    <form  id="uploadform" hidden action="/fileupload" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" >
+    </form>
+    <div class="profdets flex flex-col items-center mt-20">
+        <div class="relative">
+            <span id="uploadicon" class="w-8 h-8 absolute bottom-0 right-0 rounded-full flex items-center justify-center bg-zinc-200"><i class=" text-zinc-700 ri-pencil-line"></i></span>
+        <div class="w-32 h-32 bg-zinc-200  rounded-full overflow-hidden">
+            <img class="w-full h-full object-cover"  src="https://i.pinimg.com/564x/95/84/c3/9584c3129598572ed64083c67de609ea.jpg" alt="">
+        </div></div>
+            <h1 class="text-2xl  font-semibold  "> Rahul Vishwakarma</h1>
+            <h3 class="text-md">@username</h3>
+            <a href="/edit" class=" mt-5 px-7 py-2 bg-zinc-700 rounded-full text-sm font-semibold">Edit</a>
+            <button class="px-8 py-2 mt-10 font-semibold text-xl rounded-lg bg-red-700 "> Create a post</button>
+    </div>
+
+    <div class="cards flex flex-wrap gap-10 px-10 mt-10 ">
+        <div class="card">
+        <div class=" card w-52 h-40 rounded-lg bg-zinc-300 overflow-hidden "> <img class="w-full h-full object-cover" src="https://i.pinimg.com/564x/fc/d3/47/fcd347086f9e386e80d3336b35cd17f8.jpg" alt=""></div>
+            <h3 class="text-xl font-semibold text-white mt-3">All Pins</h3>
+            <h5 class="text-sm font-medium opacity-60"> 28 pins</h5>
+       
+    </div>
+</div>
+</div>
+
+<script>
+    document.querySelector("#uploadicon").addEventListener("click",function(){
+        document.querySelector("#uploadform input").click();
+    })
+
+    document.querySelector("#uploadform input").addEventListener("change",function(){
+        document.querySelector("#uploadform").submit();
+    })
+</script>
+<% include ./partials/footer.ejs %>
