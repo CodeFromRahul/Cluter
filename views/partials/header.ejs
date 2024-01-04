@@ -12,6 +12,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+  <% if(nav === true){ %>
   <div class="w-full px-10 py-3 flex justify-between bg-zinc-800 text-white ">
     <h3>Pinterest</h3>
     <div class="flex gap-10 items-center">
@@ -20,3 +21,4 @@
       <a class="px-3 py-1 bg-red-700 text-white rounded-lg " href="/logout">Logout</a>
     </div>
   </div>
+  <% } %>
