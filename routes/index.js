@@ -25,7 +25,11 @@ const data = new userModel({
 })
 
 router.get("/profile",isLoggedIn, async function(req,res,next){
-  const user = await userModel.findOne({ username:req.session.passport.user});
+  const user = 
+  await userModel
+  .findOne({ username:req.session.passport.user})
+  .populate("posts");
+  console.log(user);
 
   res.render("profile",{user,nav:true});
 })
